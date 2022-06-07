@@ -14,24 +14,26 @@ body{
 
 }
 .realTimeScore{
+    display: none;
     position: absolute;
     z-index: 100000;
+    color: white;
+    font-size: 25px;
  left: 5vw;
  top: 10vh;
 }
 .finalPop{
-    
     position: absolute;
     z-index: 100000000;
     display: none;
     align-items: center;
     justify-content: center;
     font-size: 40px;
+    background: url("back.jpg");
     flex-direction: column;
     height: 100vh;
     width: 100vw;
-    color: black;
-    background-color: red;
+
 
 }
 .homepage{
@@ -41,7 +43,9 @@ body{
     background: url('lines.jpg');
     width: 100vw;
     display: flex;
+    color: white;
     align-items: center;
+    flex-direction: column;
     justify-content: center;
     background-repeat:no-repeat ;
     background-size: cover;

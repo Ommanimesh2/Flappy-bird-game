@@ -22,8 +22,7 @@ let playerName;
 const playSong=new Audio("song.mp3")
 const coinSound=new Audio("coinSound.mp3")
     // document.querySelector(".img").style.display="none"
-    document.querySelector(".container").style.opacity=0.8
-    document.querySelector(".container").style.backgroundColor="black"
+    document.querySelector(".container").style.opacity=0.9
     document.querySelector(".homepage").style.backgroundColor="black" 
     const names=document.querySelector(".name")
     const score=document.querySelector(".score")
@@ -65,9 +64,11 @@ const coinSound=new Audio("coinSound.mp3")
     document.querySelector(".playbtn").addEventListener("click",()=>{
         names.innerHTML=playerName
         start()
+        realTimeScore.style.display="block"
         gameOn=true
         document.querySelector(".img").style.display="block"
         document.querySelector(".instructions").remove()
+        document.querySelector(".homepage").remove()
         document.querySelector(".container").style.backgroundColor="white"
         playSong.play()
     })     
@@ -88,7 +89,6 @@ function moveThePipes(){
       document.querySelector(".finalPop").style.display="flex"
                finalScore.innerHTML=s
                playSong.pause()
-               document.querySelector(".img").remove()
                 stop()
             }
         }
@@ -192,10 +192,9 @@ function apply_gravity(){
 
     
        finalScore.innerHTML=s
-       document.querySelector(".highScore").innerHTML=14
+       document.querySelector(".highScore").innerHTML=scoreArr[scoreArr.length-1].score
         stop()
         playSong.pause()
-        document.querySelector(".img").remove()
     
         return;
     }
