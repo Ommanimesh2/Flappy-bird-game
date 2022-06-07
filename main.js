@@ -29,8 +29,13 @@ const coinSound=new Audio("coinSound.mp3")
     const finalScore=document.querySelector(".finalScore")
     const realTimeScore=document.querySelector(".realTimeScore")
     document.querySelector(".btn1").addEventListener("click",()=>{
-        document.querySelector(".homepage").style.display="none" 
-        playerName=document.querySelector(".nameOfPlayer").value
+        if(document.querySelector(".nameOfPlayer").value==""){
+            alert("enter your name")
+        }else{
+            
+            document.querySelector(".homepage").style.display="none" 
+            playerName=document.querySelector(".nameOfPlayer").value
+        }
         
     })
     let s=0
