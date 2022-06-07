@@ -39,16 +39,56 @@ body{
 .homepage{
     position: absolute;
     z-index: 1000;
+    text-transform: capitalize;
+    font-size: 20px;
     height: 100vh;
     background: url('lines.jpg');
     width: 100vw;
-    display: flex;
     color: white;
     align-items: center;
+    display: flex;
     flex-direction: column;
+    
     justify-content: center;
     background-repeat:no-repeat ;
     background-size: cover;
+}
+.mainItems{
+    padding: 5vh;
+    align-items: center;
+    opacity: 0.7;
+    display: flex;
+    flex-direction: column;
+    background-color: brown;
+    justify-content: center;
+}
+.nameOfPlayer{
+margin: 3vh;
+width: 14vw;
+
+}
+.btn1{
+    width: 14vw;
+    height: 4vh;
+    margin-top: 4vh;
+    
+}
+.some{
+    min-width: 8vw;
+    max-width: 5vw;
+}
+.showWin{
+    display: flex;
+    flex-direction: row;
+}
+.showWin div{
+    padding-right: 100px;
+}
+.leaderboard{
+    width: 14vw;
+    height: 4vh;
+    margin-top: 4vh;
+    overflow-y: scroll;
 }
 .leader{
     height: 100vh;

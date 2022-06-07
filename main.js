@@ -41,7 +41,14 @@ const coinSound=new Audio("coinSound.mp3")
     leaderBtn.addEventListener("click",()=>{
      scoreArr.reverse().forEach((e)=>{
          const div=document.createElement("div")
-         div.innerHTML+=`name:${e.userName} score:${e.score}`
+         div.classList.add("showWin")
+         const currname=document.createElement("div")
+         currname.classList.add("some")
+         currname.innerHTML=e.userName
+         const currscore=document.createElement("div")
+         currscore.innerHTML=e.score
+         div.appendChild(currname)
+         div.appendChild(currscore)
          leader.appendChild(div)
          leader.style.display="block"
         })
@@ -51,12 +58,12 @@ const coinSound=new Audio("coinSound.mp3")
         
 })
     const saveBtn=document.querySelector(".playagain")
-    saveBtn.addEventListener("click",()=>{
-     setTimeout(() => {
+    saveBtn.addEventListener("click",async()=>{
+        await saveScore(playerName,s)
+ 
       location.reload()
          
-     }, 3000);
-     saveScore(playerName,s)
+
     })
     const time=9
     const g=0.3
