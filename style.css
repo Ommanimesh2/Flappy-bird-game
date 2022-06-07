@@ -1,0 +1,145 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.initialScore{
+    position: absolute;
+    z-index: 11213;
+    top: 20vw;
+    left: 30vw;
+    height: 20vh;
+    width: 15vw;
+
+}
+.realTimeScore{
+    position: absolute;
+    z-index: 100000;
+ left: 5vw;
+ top: 10vh;
+}
+.finalPop{
+    
+    position: absolute;
+    z-index: 100000000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    color: black;
+    background-color: red;
+
+}
+.homepage{
+    position: absolute;
+    z-index: 1000;
+    height: 100vh;
+    background: url('lines.jpg');
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-repeat:no-repeat ;
+    background-size: cover;
+}
+.leader{
+    height: 100vh;
+    padding: 30px;
+    width: 50vw;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    font-size: 20px;
+    z-index: 1000000000000;
+    right: 25vw;
+    background-color: green;
+  
+}
+.container{
+    height: 100vh;
+    width: 100vw;
+    background: url('abs.jpg');
+    position: relative;
+    background-repeat:no-repeat ;
+    background-size: cover;
+
+}
+.instructions{
+    display: flex;
+    border-radius: 10px;
+    justify-content: center;
+
+padding: 20vh;
+    flex-direction: column;
+    font-size: 40px;
+    position: absolute;
+    z-index: 1000;
+    background-color: red;
+    background-repeat:no-repeat ;
+    background-size: cover;
+    margin: 10vh 20vw;
+}
+.img{
+    top: 30vh;
+    left: 15vw;
+    border-radius: 50%;
+    height: 5vh;
+  
+    position: fixed;
+    z-index: 2;
+}
+
+.obstacle {
+ 
+    height: 100vh;
+    width: 10vw;
+    position: absolute;
+    
+    
+}
+.hor{
+    background: url('pipe.png');
+
+    background-repeat:no-repeat ;
+    background-size: contain;
+}
+.vert{
+    background: url('rotate.png');
+
+    background-repeat:no-repeat ;
+    background-size: contain;
+}
+
+    .coins:before{
+      background: linear-gradient(45deg,  rgba(242,215,12,1) 0%,rgba(255,255,255,1) 56%,rgba(252,235,0,1) 96%);
+      border: 1px solid rgb(242, 215, 12);
+      }
+    
+    
+    .coins:after{
+      background: linear-gradient(45deg,  rgba(242,215,12,1) 0%,rgba(255,255,255,1) 56%,rgba(252,235,0,1) 96%);
+      border-top: 1px solid rgba(255,255,255,0.3);
+      border-left: 1px solid rgba(255,255,255,0.3);
+      border-bottom: 1px solid rgba(242,215,12,0.3);
+      border-right: 1px solid rgba(242,215,12,0.3);
+      box-shadow: inset 0px 0px 2px 2px rgba(150, 150, 150, .05);
+      }
+    
+.coins{
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    height: 50px;
+    width: 50px;
+    background: linear-gradient(45deg,  rgb(141, 127, 21) 0%,rgba(255,255,255,1) 56%,rgba(252,235,0,1) 96%);
+
+    background-size: cover;
+    border-radius: 50%;
+
+  
+}
