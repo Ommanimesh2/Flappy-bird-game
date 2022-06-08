@@ -70,7 +70,7 @@ const coinSound=new Audio("coinSound.mp3")
     saveBtn.addEventListener("click",async()=>{
         await norepeat(playerName,s)
  
-    //   location.reload()
+      location.reload()
          
 
     })
