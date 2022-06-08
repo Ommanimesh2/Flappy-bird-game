@@ -193,3 +193,29 @@ padding: 20vh;
 
   
 }
+.numbercounter{
+    font-size: 90px;
+    position: absolute;
+    text-align: center;
+    color: white;
+    display: none;
+    top: 45vh;
+    width: 36vw;
+    height: 30vh;
+    left: 32vw;
+    z-index: 10000000000;
+}
+
+.scale-down-center {
+	        animation: scale-down-center 1s infinite;
+}
+
+  @keyframes scale-down-center {
+    0% {
+              transform: scale(1);
+    }
+    100% {
+              transform: scale(0.5);
+    }
+  }
+  

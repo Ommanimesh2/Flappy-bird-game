@@ -77,20 +77,30 @@ const coinSound=new Audio("coinSound.mp3")
     const g=0.3
     let gameOn=false
     document.querySelector(".playbtn").addEventListener("click",()=>{
+        counter.style.display="block"
+        let n=3
+        counter.innerHTML=n
         names.innerHTML=playerName
-        start()
-        realTimeScore.style.display="block"
-        gameOn=true
-        document.querySelector(".img").style.display="block"
-        document.querySelector(".instructions").remove()
-        document.querySelector(".homepage").remove()
-        document.querySelector(".container").style.backgroundColor="white"
-        playSong.play()
+        setInterval(() => {
+            n=n-1
+            counter.innerHTML=n
+        }, 1000);
+        setTimeout(() => {
+            start()
+            realTimeScore.style.display="block"
+            gameOn=true
+            document.querySelector(".img").style.display="block"
+            document.querySelector(".container").style.backgroundColor="white"
+            playSong.play()
+            counter.remove()
+    }, 4000);
+    document.querySelector(".instructions").remove()
+    document.querySelector(".homepage").remove()
     })     
 
   
     
-
+let counter=document.querySelector(".numbercounter")
 function start(){
 function moveThePipes(){
     const alldiv=document.querySelectorAll(".obstacle")
