@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
-import { addDoc, getFirestore,collection,doc, getDocs,query,orderBy } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-firestore.js";
+import { addDoc, getFirestore,collection, doc, getDocs,getDoc,where,query,orderBy,updateDoc } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-firestore.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -36,6 +36,7 @@ const coinSound=new Audio("coinSound.mp3")
             }, 1000);
         }else{
             
+            
             document.querySelector(".homepage").style.display="none" 
             playerName=document.querySelector(".nameOfPlayer").value
         }
@@ -67,9 +68,9 @@ const coinSound=new Audio("coinSound.mp3")
 })
     const saveBtn=document.querySelector(".playagain")
     saveBtn.addEventListener("click",async()=>{
-        await saveScore(playerName,s)
+        await norepeat(playerName,s)
  
-      location.reload()
+    //   location.reload()
          
 
     })
@@ -293,7 +294,8 @@ async function saveScore(playerName,score){
     try {
         await addDoc(collection(db, "users"),{
            userName:playerName,
-           score:score
+           score:score,
+           
         
         })
         
@@ -315,8 +317,28 @@ async function scoresForLeaderboard(){
 }
 
 
+async function norepeat(cu,ns){
+    const querys=query(collection(db, "users"),where("userName","==",cu))
+    const querySnapshot = await getDocs(querys);
+    
+    
+    if(querySnapshot.size==0){
+        await saveScore(playerName,s)
+        
+    }
+    else{
 
-
+       
+            const dos=doc(db,"users",querySnapshot.docs[0].id)
+            console.log(dos);
+            await updateDoc(dos,{
+                userName:cu,
+                score:ns
+            })
+            console.log("done");
+ 
+        }
+}
 
 
 
